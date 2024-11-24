@@ -44,10 +44,10 @@ public class OwnedServer extends Server {
 	}
 	
 	public double getOperatingCost(int years) {
-		return baseCost + (1 + failureRate) * Server.getCompareNumYears() * maintenanceCost;
+		return baseCost + (1 + failureRate) * years * maintenanceCost;
 	}
 	
 	public String toString() {
-		return super.toString() + "," + maintenanceCost + "," + failureRate + "," + baseCost;
+		return super.toString() + ",N/A," + String.format("%.2f", maintenanceCost) + "," + String.format("%.2f", failureRate) + "," + String.format("%.2f", baseCost) + ",N/A" + ",N/A";
 	}
 }
