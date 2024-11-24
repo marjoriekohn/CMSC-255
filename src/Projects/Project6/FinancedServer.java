@@ -25,4 +25,6 @@ public class FinancedServer extends OwnedServer {
 	public void setApr(double apr) {
 		this.apr = apr;
 	}
+	
+	public String toString() {}
 }

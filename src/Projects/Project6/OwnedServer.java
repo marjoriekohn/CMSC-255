@@ -35,4 +35,6 @@ public class OwnedServer extends Server {
 	public void setBaseCost(double baseCost) {
 		this.baseCost = baseCost;
 	}
+	
+	public String toString() {}
 }
