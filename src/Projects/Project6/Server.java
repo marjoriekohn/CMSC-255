@@ -1,6 +1,6 @@
 package Projects.Project6;
 
-public abstract class Server {
+public abstract class Server implements Comparable<Server> {
 	private String brand;
 	private static int compareNumYears = 5;
 	
