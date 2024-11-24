@@ -26,6 +26,6 @@ public class RentalServer extends Server {
 	}
 	
 	public String toString() {
-		return super.toString() + "," + annualRent;
+		return super.toString() + "," + String.format("%.2f", annualRent)  + ",N/A" + ",N/A" + ",N/A" + ",N/A" + ",N/A";
 	}
 }
