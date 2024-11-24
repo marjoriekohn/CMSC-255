@@ -34,17 +34,16 @@ public class FinancedServer extends OwnedServer {
 	
 	public double getOperatingCost(int years) {
 		double baseCost = super.getBaseCost();
-		double maintenanceCost = super.getMaintenanceCost();
-		double failureRate = super.getFailureRate();
+		double operatingCosts = super.getOperatingCost(years);
 		
 		if (years > loanTerm) {
-			return baseCost * apr * years + (baseCost / loanTerm) * years + (1 + failureRate) * years * maintenanceCost;
+			return (baseCost * apr * loanTerm) + operatingCosts;
 		} else {
-			return baseCost * apr * loanTerm + super.getOperatingCost(years);
+			return baseCost * apr * years + (baseCost / (double) loanTerm) * years + (operatingCosts - baseCost);
 		}
 	}
 	
 	public String toString() {
-		return super.toString() + "," + loanTerm + "," + apr;
+		return super.toString().substring(0, super.toString().length() - 7) + loanTerm + "," + String.format("%.2f", apr);
 	}
 }

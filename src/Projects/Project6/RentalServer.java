@@ -1,5 +1,7 @@
 package Projects.Project6;
 
+import java.util.Arrays;
+
 public class RentalServer extends Server {
 	private double annualRent;
 	
@@ -26,6 +28,6 @@ public class RentalServer extends Server {
 	}
 	
 	public String toString() {
-		return super.toString() + "," + String.format("%.2f", annualRent)  + ",N/A" + ",N/A" + ",N/A" + ",N/A" + ",N/A";
+		return super.toString() + "," + String.format("%.2f", annualRent) + ",N/A,N/A,N/A,N/A,N/A";
 	}
 }
