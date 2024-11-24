@@ -1,8 +1,12 @@
 package Projects.Project6;
 
-abstract public class Server {
+public abstract class Server {
 	private String brand;
 	private static int compareNumYears = 5;
+	
+	public Server(){
+		this.brand = "";
+	}
 	
 	public Server(String brand) {
 		this.brand = brand;
@@ -24,7 +28,13 @@ abstract public class Server {
 		Server.compareNumYears = compareNumYears;
 	}
 	
-	abstract double getOperatingCost(int years);
+	public abstract double getOperatingCost(int years);
 	
-	public String toString() {}
+	public int compareTo(Server other) {
+		return Double.compare(this.getOperatingCost(compareNumYears), other.getOperatingCost(compareNumYears));
+	}
+	
+	public String toString() {
+		return brand;
+	}
 }

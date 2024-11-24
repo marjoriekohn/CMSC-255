@@ -5,6 +5,13 @@ public class OwnedServer extends Server {
 	private double failureRate;
 	private double baseCost;
 	
+	public OwnedServer() {
+		super();
+		this.maintenanceCost = 0.0;
+		this.failureRate = 0.0;
+		this.baseCost = 0.0;
+	}
+	
 	public OwnedServer(String brand, double maintenanceCost, double failureRate, double baseCost) {
 		super(brand);
 		this.maintenanceCost = maintenanceCost;
@@ -36,5 +43,11 @@ public class OwnedServer extends Server {
 		this.baseCost = baseCost;
 	}
 	
-	public String toString() {}
+	public double getOperatingCost(int years) {
+		return baseCost + (1 + failureRate) * Server.getCompareNumYears() * maintenanceCost;
+	}
+	
+	public String toString() {
+		return super.toString() + "," + maintenanceCost + "," + failureRate + "," + baseCost;
+	}
 }
